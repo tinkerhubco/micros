@@ -1,0 +1,10 @@
+{
+  "name": "root",
+  "private": true,
+  "devDependencies": {
+    "lerna": "^3.18.5"
+  },
+  "scripts": {
+    "lerna:create": "lerna create"
+  }
+}
