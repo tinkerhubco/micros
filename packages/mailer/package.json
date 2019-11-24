@@ -13,6 +13,8 @@
     "url": "https://github.com/tinker-hub/micros/issues"
   },
   "dependencies": {
+    "@sendgrid/mail": "^6.4.0",
+    "serverless-dotenv-plugin": "^2.1.1",
     "source-map-support": "^0.5.10"
   },
   "devDependencies": {
@@ -24,6 +26,5 @@
     "typescript": "^3.2.4",
     "webpack": "^4.29.0",
     "webpack-node-externals": "^1.7.2"
-  },
-  "scripts": {}
+  }
 }

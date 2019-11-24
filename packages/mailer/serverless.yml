@@ -22,12 +22,12 @@ custom:
     includeModules: true
 
 plugins:
+  - serverless-dotenv-plugin
   - serverless-webpack
 
 # You can pin your service to only deploy with a specific Serverless version
 # Check out our docs for more details
 # frameworkVersion: "=X.X.X"
-
 
 provider:
   name: aws
@@ -72,13 +72,18 @@ provider:
 #    - exclude-me-dir/**
 
 functions:
-  hello:
-    handler: handler.hello
+  ping:
+    handler: handler.ping
     events:
       - http:
-          path: /
+          path: /ping
           method: GET
-
+  send:
+    handler: handler.send
+    events:
+      - http:
+          path: /send
+          method: POST
 #    The following are a few example events you can configure
 #    NOTE: Please make sure to change your handler code to work with those events
 #    Check the event documentation for details

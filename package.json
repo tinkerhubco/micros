@@ -5,6 +5,7 @@
     "lerna": "^3.18.5"
   },
   "scripts": {
+    "lerna:add": "lerna add",
     "lerna:create": "lerna create"
   }
 }
