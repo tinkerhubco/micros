@@ -32,7 +32,9 @@ plugins:
 provider:
   name: aws
   region: ap-southeast-1
-  runtime: nodejs10.x
+  runtime: nodejs12.x
+  apiKeys:
+    - ${self:provider.stage}-${self:service.name}-developer-key
   apiGateway:
     minimumCompressionSize: 1024 # Enable gzip compression for responses > 1 KB
   environment:
@@ -78,12 +80,14 @@ functions:
       - http:
           path: /ping
           method: GET
+          private: true
   send:
     handler: handler.send
     events:
       - http:
           path: /send
           method: POST
+          private: true
 #    The following are a few example events you can configure
 #    NOTE: Please make sure to change your handler code to work with those events
 #    Check the event documentation for details
