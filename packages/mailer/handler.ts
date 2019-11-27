@@ -26,7 +26,7 @@ export const send: APIGatewayProxyHandler = async (event, _context) => {
     dynamicTemplateData,
     from = {
       name: 'No Reply',
-      email: 'noreply@micros.tinkerhub.dev'
+      email: 'noreply@mailer.micros.tinkerhub.dev'
     },
     subject,
     templateId,
@@ -45,6 +45,10 @@ export const send: APIGatewayProxyHandler = async (event, _context) => {
 
   return {
     body: responseBody,
+    headers: {
+      'Access-Control-Allow-Origin': '*',
+      'Access-Control-Allow-Credentials': true,
+    },
     statusCode: responseStatusCode
   };
 };
